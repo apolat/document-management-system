@@ -21,26 +21,42 @@
 
 package com.openkm.ws.endpoint;
 
-import com.openkm.automation.AutomationException;
-import com.openkm.bean.PropertyGroup;
-import com.openkm.bean.form.*;
-import com.openkm.core.*;
-import com.openkm.extension.core.ExtensionException;
-import com.openkm.module.ModuleManager;
-import com.openkm.module.PropertyGroupModule;
-import com.openkm.ws.util.FormElementComplex;
-import com.openkm.ws.util.StringPair;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebService;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.jws.WebService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.openkm.automation.AutomationException;
+import com.openkm.bean.PropertyGroup;
+import com.openkm.bean.form.CheckBox;
+import com.openkm.bean.form.FormElement;
+import com.openkm.bean.form.Input;
+import com.openkm.bean.form.Option;
+import com.openkm.bean.form.Select;
+import com.openkm.bean.form.SuggestBox;
+import com.openkm.bean.form.TextArea;
+import com.openkm.core.AccessDeniedException;
+import com.openkm.core.Config;
+import com.openkm.core.DatabaseException;
+import com.openkm.core.LockException;
+import com.openkm.core.NoSuchGroupException;
+import com.openkm.core.NoSuchPropertyException;
+import com.openkm.core.ParseException;
+import com.openkm.core.PathNotFoundException;
+import com.openkm.core.RepositoryException;
+import com.openkm.extension.core.ExtensionException;
+import com.openkm.module.ModuleManager;
+import com.openkm.module.PropertyGroupModule;
+import com.openkm.ws.common.util.FormElementComplex;
+import com.openkm.ws.util.StringPair;
 
 @WebService(name = "OKMPropertyGroup", serviceName = "OKMPropertyGroup", targetNamespace = "http://ws.openkm.com")
 public class PropertyGroupService {

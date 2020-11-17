@@ -29,7 +29,8 @@ import com.openkm.bean.workflow.Token;
 import com.openkm.core.*;
 import com.openkm.module.ModuleManager;
 import com.openkm.module.WorkflowModule;
-import com.openkm.ws.util.FormElementComplex;
+import com.openkm.ws.common.util.FormElementComplex;
+
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
